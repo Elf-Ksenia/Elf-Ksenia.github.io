@@ -7,8 +7,13 @@
 body{
   font: 400 14px/1 'PT Sans', sans-serif;
   margin: 0;
+  background: linear-gradient(89.79deg, #23196F 0.13%, #180D5B 99.88%);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
-
+img {
+  max-width: 100%;
+}
 a{
 text-decoration: none;
 color: inherit;
@@ -86,10 +91,10 @@ margin-left: 30px;
 }
 
 .inner{
-  height: 100vh;
-  background: linear-gradient(89.79deg, #23196F 0.13%, #180D5B 99.88%);
+  height: 100vh; 
   padding-top: 106px;
   min-height: 910px;
+  overflow: hidden;
 }
 
 .inner-call-to-action{
@@ -97,14 +102,28 @@ margin-left: 30px;
   position: relative;
 }
 
-.inner-call-to-action::after{
+
+
+.inner-call-to-action::before {
   content: '';
-  width: 738px;
-  height: 711px;
-  background: url('../img/image.png') no-repeat;
   position: absolute;
-  top: -100px;
-  right: -655px;
+ width: 738px;
+height: 711px;
+  background-image: url('../img/image.png');
+  background-repeat: no-repeat;
+  left: 80%;
+  top: -30%;
+  opacity: 0;
+  animation: opacity 0.2s ease-in 800ms forwards;
+} 
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .inner-title{
@@ -115,6 +134,8 @@ margin-left: 30px;
   margin-top: 55px;
   position: relative;
 z-index: 1;
+max-width: 542px;
+
 }
 
 .inner-text {
@@ -158,9 +179,110 @@ z-index: 1;
   height: 164px;
   cursor: pointer;
 }
-.inner-service-item:hover {
-background-color: #fff;
+.inner-service-item img {
+  position: relative;
 }
+
 .inner-service-item + .inner-service-item {
   margin-left: 10px;
 }
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+.hvr-sweep-to-top {
+
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
+  color: white;
+}
+.hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+/* @media (max-width:) */
