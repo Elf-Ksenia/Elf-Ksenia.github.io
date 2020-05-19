@@ -1,0 +1,27 @@
+{
+  "name": "MailGenius",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elf-Ksenia/MailGenius.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elf-Ksenia/MailGenius/issues"
+  },
+  "homepage": "https://github.com/Elf-Ksenia/MailGenius#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1"
+  },
+  "dependencies": {
+    "gulp-sass": "^4.1.0"
+  }
+}
